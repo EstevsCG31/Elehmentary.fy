@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lusther 3D - Plataforma</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #4f4f4f, #ffd700, #000000, #ffffff, #c0c0c0, #ff8c00);
+            background-size: 400% 400%;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            animation: BackgroundGradient 10s ease infinite; /* Aumentei para 10s para ficar mais suave */
+        }
+
+        @keyframes BackgroundGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NOVA BARRA DE NAVEGAÇÃO --- */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid gold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover { color: gold; }
+
+        /* Controle de visibilidade das seções */
+        .secao { display: none; padding: 20px; }
+        .ativa { display: block; }
+
+        /* Estilos que você já tinha */
+        .header-perfil { text-align: center; padding: 40px 20px; background: rgba(0, 0, 0, 0.4); }
+        .avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid gold; object-fit: cover; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; padding: 20px; }
+        .card { background: rgba(30, 30, 30, 0.9); border-radius: 12px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255,255,255,0.1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .card img { width: 100%; height: 280px; object-fit: cover; }
+        .card-info { padding: 15px; }
+        .badge-3d { background: gold; color: black; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+        button { background: #ff4757; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="mostrar('home')">🏠 Home</a>
+        <a onclick="mostrar('quadrinhos')">📚 Quadrinhos</a>
+        <a onclick="mostrar('impressao')">⚙️ Impressão 3D</a>
+    </nav>
+
+    <div id="home" class="secao ativa">
+        <header class="header-perfil">
+            <img src="https://via.placeholder.com/150" class="avatar" alt="Avatar">
+            <h1>C.G L.Jr</h1>
+            <p style="color: gold;">@lusther3d2025</p>
+            <p>Bem-vindo ao meu portal de criações literárias e digitais.</p>
+        </header>
+    </div>
+
+    <div
